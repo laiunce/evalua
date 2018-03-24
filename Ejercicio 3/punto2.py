@@ -29,8 +29,6 @@ def expo0102(val_2001,val_2002):
             return '1'   
         else:
             return '0'
-    else:
-        return '0'
 
 datos_ine_ = pd.read_excel('datos_ine.xlsx', sheet_name= 'Datos')
 
