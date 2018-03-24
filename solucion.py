@@ -21,14 +21,16 @@ import os
 
 
 
-
-
 # la api no tiene filtro de fechas por lo que el filtrado se realiza una vez descargada la informacion
 
 
 
 moneda='BTC'
 mercado = 'CNY'
+dateini = '2018-01-01'
+datefin = '2018-03-25'
+
+
 
 path = "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol={}&market={}&apikey=demo#jso".format(moneda,mercado)
 r = requests.get(path) 
@@ -48,6 +50,16 @@ for i in data_por_tiempo:
     except:
         pass
     
-    
+#filtrado
+
+
+dataset_filtrofech = dataset[(dataset['fecha'] >= dateini.replace('-','')) & (dataset['fecha'] <= datefin.replace('-',''))]
+dataset_filtrofech.to_csv(working_directory+'/salida.csv',index=False)
+
+
+
+
+
+
 
 
