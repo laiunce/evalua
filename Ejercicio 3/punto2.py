@@ -24,11 +24,10 @@ def asigna_tipo_emp(val_2001,val_2006):
         return 'Cont. Non-Exporter'    
 
 def expo0102(val_2001,val_2002):
-    try:
-        if val_2001== 0 and val_2002 ==1:
-            return '1'   
-        else:
-            return '0'
+    if val_2001== 0 and val_2002 ==1:
+        return '1'   
+    else:
+        return '0'
 
 datos_ine_ = pd.read_excel('datos_ine.xlsx', sheet_name= 'Datos')
 
