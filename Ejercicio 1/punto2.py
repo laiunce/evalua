@@ -94,16 +94,6 @@ plt.title('cotizaciones y promedio')
 plt.show()
 
 
-# PUNTO 3
-
-#LE INGRESA LA COTA para hacer tecnica por descomposicion si el residuo supera un 50% del maximo desvio lo tilda como outlier de la siere
-
-analizar_serie_outlier(v_open,0.5)
-
-analizar_serie_outlier(v_close,0.5)
-
-analizar_serie_outlier(v_open,0.5)
-
 
 
 

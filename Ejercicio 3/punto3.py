@@ -46,4 +46,9 @@ datos_ine_['expo0102']= datos_ine_.apply(lambda row: estaenlista(row['nui'], lis
 filtrado_expor0102 = datos_ine_[datos_ine_['expo0102'] == 1]
 
 
+#regresion par 2003
 
+
+subset = filtrado_expor0102[['nui','year']]
+tabla_pivote = subset.pivot_table(index='nui', columns='year', aggfunc=len, fill_value=0)
+tabla_pivote.columns = ['2001','2002','2003','20014','2005','2006']

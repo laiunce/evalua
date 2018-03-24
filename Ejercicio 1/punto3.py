@@ -60,7 +60,7 @@ def analizar_serie_outlier(analiza_serie,porcentaje_cota):
 
 # PUNTO 3
 
-#LE INGRESA LA COTA para hacer tecnica por descomposicion si el residuo supera un 50% del maximo desvio lo tilda como outlier de la siere
+#LE INGRESA LA COTA para hacer tecnica por descomposicion si el residuo supera un 50% del maximo desvio absoluto lo tilda como outlier de la serie
 
 analizar_serie_outlier(v_open,0.5)
 

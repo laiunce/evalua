@@ -39,15 +39,11 @@ datos_ine_ = pd.read_excel('datos_ine.xlsx', sheet_name= 'Datos')
 
 
 subset = datos_ine_[['expval','nui','year']]
-
 tabla_pivote = subset.pivot_table(index='nui', columns='year', aggfunc=len, fill_value=0)
 tabla_pivote.columns = ['2001','2002','2003','20014','2005','2006']
-
 tabla_pivote['tipo_empresa']= tabla_pivote.apply(lambda row: asigna_tipo_emp(row['2001'], row['2006']), axis=1)
-
 #asigna nombre empresa
 tabla_pivote['nom_emp'] = tabla_pivote.index.values
-
 #asigna clasificacion por empresa
 merged_data =pd.merge(datos_ine_, tabla_pivote[['tipo_empresa','nom_emp']], left_on='nui', right_on='nom_emp')
 
