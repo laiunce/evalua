@@ -22,9 +22,21 @@ def asigna_tipo_emp(val_2001,val_2006):
         return 'Cont. Exporter'   
     if val_2001== 0 and val_2006 ==0:
         return 'Cont. Non-Exporter'    
-    
+
+def expo0102(val_2001,val_2002):
+    try:
+        if val_2001== 0 and val_2002 ==1:
+            return '1'   
+        else:
+            return '0'
+    else:
+        return '0'
 
 datos_ine_ = pd.read_excel('datos_ine.xlsx', sheet_name= 'Datos')
+
+
+#PUNTO 2
+
 
 subset = datos_ine_[['expval','nui','year']]
 
@@ -52,3 +64,4 @@ tabla_ventas_mediana = subset_ventas.groupby(['tipo_empresa', 'year'], as_index=
 subset_emp = merged_data[['tipo_empresa','emptot','year']]
 tabla_empleo_promedio = subset_emp.groupby(['tipo_empresa', 'year'], as_index=False).mean()
 tabla_empleo_mediana = subset_emp.groupby(['tipo_empresa', 'year'], as_index=False).median()
+
